@@ -11,19 +11,23 @@ void permutations(string ans, string str) {
     }
     for(int i=0;i < len;i++) {
 
-        char x = str[i];
-        string temp = "";
-        // creating new string to recurse
-        for(int j = 0;j < len;j++) {
-            if(x != str[j]) temp += str[j];
-        }
-        permutations(ans+str[i],temp);
+        // method 1 to calculate next string
+        // char x = str[i];
+        // string temp = "";
+        // for(int j = 0;j < len;j++) {
+        //     if(x != str[j]) temp += str[j];
+        // }
+
+        // Efficient method
+        string left = str.substr(0,i);
+        string right = str.substr(i+1);
+        permutations(ans+str[i],left+right);
     }
     return;
 }
 
 int main() {
-    string str = "abcde";
+    string str = "abc";
     
     permutations("",str);
     
