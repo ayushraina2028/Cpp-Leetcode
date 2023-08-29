@@ -24,8 +24,5 @@ int main() {
     int i = 0;
     printSubsets(arr,n,i,v);
 
-    for (int i : v) {
-        cout << i << " ";
-    }
-    cout << endl;
+    
 }
