@@ -68,7 +68,7 @@ void mergeSort(vector <int>& v) {
 
 int main() {
     // Problem 15 Assignment 3
-    vector <int> v = {10,3,5,1,2,15,8,6,12};
+    vector <int> v = {6,7,2,1,3,8,9,0,15,10};
     vector <int> v1 = v;
 
     cout << "Before Sorting" << endl;
