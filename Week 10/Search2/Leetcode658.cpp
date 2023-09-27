@@ -4,6 +4,9 @@
 #include <vector>
 
 using namespace std;
+
+
+
 int low = 0;
 int high = 0;
 
@@ -16,7 +19,6 @@ int binarySearch(vector <int> arr, int target) {
 
         mid = low + (high-low) / 2;
         if(arr[mid] == target) {
-            cout << "mid:" << mid << endl;
             return mid;
         }
 
@@ -32,7 +34,7 @@ int binarySearch(vector <int> arr, int target) {
     return -1;
 }
 
-vector <int> findClosestElements(vector <int> arr, int k, int x) {
+vector <int> findKClosestElements(vector <int> arr, int k, int x) {
 
     vector <int> answer(k,0);
     int n = arr.size();
@@ -157,25 +159,25 @@ vector <int> findClosestElements(vector <int> arr, int k, int x) {
     }
 
     
-
+    sort(answer.begin(), answer.end());
     return answer;
-}
+    }
 
 
 int main() {
 
     
-    vector <int> v = {-2,-1,1,2,3,4,5};
+    vector <int> v = {1};
     for(int i=0; i<v.size(); i++) {
         cout << v[i] << " ";
     }
 
-    int k = 7;
-    int x = 3;
+    int k = 1;
+    int x = 1;
 
     cout << endl;
 
-    vector <int> answer = findClosestElements(v, k, x);
+    vector <int> answer = findKClosestElements(v, k, x);
     for(int i=0; i<answer.size(); i++) {
         cout << answer[i] << " ";
     }

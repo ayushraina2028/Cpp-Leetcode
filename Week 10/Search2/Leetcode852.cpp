@@ -24,6 +24,8 @@ int peakIndexInMountainArray3(vector<int> arr) {
             low = mid+1;
         }
     }
+
+    return -1;
 }
 
 int peakIndexInMountainArray2(vector<int> arr) {
@@ -31,7 +33,7 @@ int peakIndexInMountainArray2(vector<int> arr) {
     int high = arr.size()-1;
     int mid;
 
-    while(low <= high) {
+    while(low < high) {
         mid = low + (high-low)/2;
 
         if(arr[mid]>arr[mid+1] && arr[mid] > arr[mid-1]) {
@@ -54,6 +56,7 @@ int peakIndexInMountainArray2(vector<int> arr) {
             high = mid-1;
         }
     }
+    return -1;
 }
 
 
@@ -73,7 +76,7 @@ int peakIndexInMountainArray1(vector<int> arr) {
 
 int main() {
 
-    vector <int> arr = {20,28,33,1,0};
+    vector <int> arr = {20,28,25,24,10,8};
 
     // O(n) solution
     cout << "Peak index is: " << peakIndexInMountainArray1(arr) << endl;

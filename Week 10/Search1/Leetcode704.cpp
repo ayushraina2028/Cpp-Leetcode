@@ -5,17 +5,12 @@
 
 using namespace std;
 
-int search(vector <int> nums, int target) {
+int binarySearch(vector <int> nums, int target) {
     int low = 0;
     int high = nums.size()-1;
     int mid;
 
     while(low <= high) {
-        
-        // mid = (low+high)/2; this is one technique
-
-        mid = low + (high-low)/2;  // this we are using if addition goes out of bound
-
         if (nums[mid] == target) {
             return mid;
         }
@@ -28,6 +23,8 @@ int search(vector <int> nums, int target) {
             high = mid-1;
         }
     }
+
+    return -1;
 }
 
 int main() {
@@ -42,5 +39,5 @@ int main() {
 
     int target = 9;
 
-    cout << "Element is found at index: " << search(v,target) << endl;
+    cout << "Element is found at index: " << binarySearch(v,target) << endl;
 }

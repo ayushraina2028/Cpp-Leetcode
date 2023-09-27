@@ -51,7 +51,6 @@ int findlowerbound(vector<int> nums, int target) {
     while(low <= high) {
 
         mid = low + (high-low)/2;
-
         
         if(nums[mid]==target) {
             flag = true;
